@@ -1,0 +1,33 @@
+[project]
+name = "traffic-congestion-prediction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "SandeshMalapur", email = "malapursandesh@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.141.1",
+    "google-genai>=2.25.0",
+    "httpx>=0.28.1",
+    "ipykernel>=7.3.0",
+    "joblib==1.6.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "numpy==2.5.3",
+    "openai>=3.22.1",
+    "pandas==3.0.6",
+    "python-dotenv>=1.2.3",
+    "scikit-learn==1.9.1",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.15.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+traffic-congestion-prediction = "traffic_congestion_prediction:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"

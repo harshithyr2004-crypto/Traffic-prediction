@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+
+# Environment variables
+.env
+*.env
+backend/.env
+frontend/.env.local
+
+# Node dependencies
+node_modules/
+frontend/node_modules/
+frontend/dist/
+PROJECT_EXPLANATION.md

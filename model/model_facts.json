@@ -1,0 +1,321 @@
+{
+  "city": "Bengaluru",
+  "state": "Karnataka, India",
+  "model_name": "Bengaluru Surface Road Traffic Congestion Classifier",
+  "algorithm": "Calibrated Logistic Regression (L2 Regularized)",
+  "dataset": "Bengaluru City Traffic Dataset (8,936 historical roadway observations, 2022\u20132024)",
+  "intercept": 0.2241,
+  "threshold": 0.45,
+  "metrics": {
+    "accuracy": 0.7142,
+    "precision": 0.645,
+    "recall": 0.7645,
+    "f1_score": 0.6996,
+    "roc_auc": 0.7795
+  },
+  "feature_spec": {
+    "roads": [
+      "100 Feet Road",
+      "Anil Kumble Circle",
+      "Ballari Road",
+      "CMH Road",
+      "Hebbal Flyover",
+      "Hosur Road",
+      "ITPL Main Road",
+      "Jayanagar 4th Block",
+      "Marathahalli Bridge",
+      "Sarjapur Road",
+      "Silk Board Junction",
+      "Sony World Junction",
+      "South End Circle",
+      "Trinity Circle",
+      "Tumkur Road",
+      "Yeshwanthpur Circle"
+    ],
+    "areas": [
+      "Electronic City",
+      "Hebbal",
+      "Indiranagar",
+      "Jayanagar",
+      "Koramangala",
+      "M.G. Road",
+      "Whitefield",
+      "Yeshwanthpur"
+    ],
+    "road_to_area": {
+      "100 Feet Road": "Indiranagar",
+      "Anil Kumble Circle": "M.G. Road",
+      "Ballari Road": "Hebbal",
+      "CMH Road": "Indiranagar",
+      "Hebbal Flyover": "Hebbal",
+      "Hosur Road": "Electronic City",
+      "ITPL Main Road": "Whitefield",
+      "Jayanagar 4th Block": "Jayanagar",
+      "Marathahalli Bridge": "Whitefield",
+      "Sarjapur Road": "Koramangala",
+      "Silk Board Junction": "Electronic City",
+      "Sony World Junction": "Koramangala",
+      "South End Circle": "Jayanagar",
+      "Trinity Circle": "M.G. Road",
+      "Tumkur Road": "Yeshwanthpur",
+      "Yeshwanthpur Circle": "Yeshwanthpur"
+    },
+    "area_to_roads": {
+      "Electronic City": [
+        "Silk Board Junction",
+        "Hosur Road"
+      ],
+      "Hebbal": [
+        "Hebbal Flyover",
+        "Ballari Road"
+      ],
+      "Indiranagar": [
+        "100 Feet Road",
+        "CMH Road"
+      ],
+      "Jayanagar": [
+        "Jayanagar 4th Block",
+        "South End Circle"
+      ],
+      "Koramangala": [
+        "Sony World Junction",
+        "Sarjapur Road"
+      ],
+      "M.G. Road": [
+        "Trinity Circle",
+        "Anil Kumble Circle"
+      ],
+      "Whitefield": [
+        "Marathahalli Bridge",
+        "ITPL Main Road"
+      ],
+      "Yeshwanthpur": [
+        "Yeshwanthpur Circle",
+        "Tumkur Road"
+      ]
+    },
+    "weather_conditions": [
+      "Clear",
+      "Fog",
+      "Overcast",
+      "Rain",
+      "Windy"
+    ],
+    "roadwork_values": [
+      false,
+      true
+    ],
+    "day_of_week_range": [
+      0,
+      6
+    ],
+    "month_range": [
+      1,
+      12
+    ]
+  },
+  "coefficients": [
+    {
+      "feature": "road_Sony World Junction",
+      "coef": 0.9417,
+      "odds_ratio": 2.5644,
+      "description": "Traveling on Sony World Junction is associated with 2.56x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Sarjapur Road",
+      "coef": 0.8017,
+      "odds_ratio": 2.2293,
+      "description": "Traveling on Sarjapur Road is associated with 2.23x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Trinity Circle",
+      "coef": 0.3627,
+      "odds_ratio": 1.4372,
+      "description": "Traveling on Trinity Circle is associated with 1.44x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Anil Kumble Circle",
+      "coef": 0.2913,
+      "odds_ratio": 1.3381,
+      "description": "Traveling on Anil Kumble Circle is associated with 1.34x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "weather_Windy",
+      "coef": 0.1706,
+      "odds_ratio": 1.1861,
+      "description": "Windy weather is associated with 1.19x odds of congestion compared to Clear skies"
+    },
+    {
+      "feature": "road_CMH Road",
+      "coef": 0.1564,
+      "odds_ratio": 1.1693,
+      "description": "Traveling on CMH Road is associated with 1.17x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "roadwork",
+      "coef": 0.0967,
+      "odds_ratio": 1.1016,
+      "description": "Active carriageway roadwork is associated with 1.10x higher odds of congestion"
+    },
+    {
+      "feature": "weather_Overcast",
+      "coef": 0.0752,
+      "odds_ratio": 1.0781,
+      "description": "Overcast weather is associated with 1.08x odds of congestion compared to Clear skies"
+    },
+    {
+      "feature": "weather_Fog",
+      "coef": 0.0647,
+      "odds_ratio": 1.0668,
+      "description": "Fog weather is associated with 1.07x odds of congestion compared to Clear skies"
+    },
+    {
+      "feature": "day_of_week",
+      "coef": 0.0351,
+      "odds_ratio": 1.0357,
+      "description": "Each 1-SD shift towards the weekend is associated with 1.04x odds of congestion"
+    },
+    {
+      "feature": "month",
+      "coef": -0.0052,
+      "odds_ratio": 0.9948,
+      "description": "Each 1-SD progression through the calendar year is associated with 0.99x odds of congestion"
+    },
+    {
+      "feature": "weather_Rain",
+      "coef": -0.0659,
+      "odds_ratio": 0.9363,
+      "description": "Rain weather is associated with 0.94x odds of congestion compared to Clear skies"
+    },
+    {
+      "feature": "is_weekend",
+      "coef": -0.0825,
+      "odds_ratio": 0.9208,
+      "description": "Weekend days are associated with 0.92x odds of congestion vs weekdays"
+    },
+    {
+      "feature": "road_Hebbal Flyover",
+      "coef": -0.6319,
+      "odds_ratio": 0.5316,
+      "description": "Traveling on Hebbal Flyover is associated with 46.8% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Ballari Road",
+      "coef": -0.7403,
+      "odds_ratio": 0.477,
+      "description": "Traveling on Ballari Road is associated with 52.3% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_South End Circle",
+      "coef": -1.1424,
+      "odds_ratio": 0.319,
+      "description": "Traveling on South End Circle is associated with 68.1% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Jayanagar 4th Block",
+      "coef": -1.3217,
+      "odds_ratio": 0.2667,
+      "description": "Traveling on Jayanagar 4th Block is associated with 73.3% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_ITPL Main Road",
+      "coef": -1.7026,
+      "odds_ratio": 0.1822,
+      "description": "Traveling on ITPL Main Road is associated with 81.8% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Marathahalli Bridge",
+      "coef": -2.0736,
+      "odds_ratio": 0.1257,
+      "description": "Traveling on Marathahalli Bridge is associated with 87.4% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Tumkur Road",
+      "coef": -2.6286,
+      "odds_ratio": 0.0722,
+      "description": "Traveling on Tumkur Road is associated with 92.8% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Yeshwanthpur Circle",
+      "coef": -2.6505,
+      "odds_ratio": 0.0706,
+      "description": "Traveling on Yeshwanthpur Circle is associated with 92.9% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Hosur Road",
+      "coef": -3.2387,
+      "odds_ratio": 0.0392,
+      "description": "Traveling on Hosur Road is associated with 96.1% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Silk Board Junction",
+      "coef": -3.2821,
+      "odds_ratio": 0.0376,
+      "description": "Traveling on Silk Board Junction is associated with 96.2% lower odds of congestion vs baseline road"
+    }
+  ],
+  "top_congested_factors": [
+    {
+      "feature": "road_Sony World Junction",
+      "coef": 0.9417,
+      "odds_ratio": 2.5644,
+      "description": "Traveling on Sony World Junction is associated with 2.56x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Sarjapur Road",
+      "coef": 0.8017,
+      "odds_ratio": 2.2293,
+      "description": "Traveling on Sarjapur Road is associated with 2.23x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Trinity Circle",
+      "coef": 0.3627,
+      "odds_ratio": 1.4372,
+      "description": "Traveling on Trinity Circle is associated with 1.44x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "road_Anil Kumble Circle",
+      "coef": 0.2913,
+      "odds_ratio": 1.3381,
+      "description": "Traveling on Anil Kumble Circle is associated with 1.34x higher odds of congestion vs baseline road (100 Feet Rd)"
+    },
+    {
+      "feature": "weather_Windy",
+      "coef": 0.1706,
+      "odds_ratio": 1.1861,
+      "description": "Windy weather is associated with 1.19x odds of congestion compared to Clear skies"
+    }
+  ],
+  "top_protective_factors": [
+    {
+      "feature": "road_Silk Board Junction",
+      "coef": -3.2821,
+      "odds_ratio": 0.0376,
+      "description": "Traveling on Silk Board Junction is associated with 96.2% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Hosur Road",
+      "coef": -3.2387,
+      "odds_ratio": 0.0392,
+      "description": "Traveling on Hosur Road is associated with 96.1% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Yeshwanthpur Circle",
+      "coef": -2.6505,
+      "odds_ratio": 0.0706,
+      "description": "Traveling on Yeshwanthpur Circle is associated with 92.9% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Tumkur Road",
+      "coef": -2.6286,
+      "odds_ratio": 0.0722,
+      "description": "Traveling on Tumkur Road is associated with 92.8% lower odds of congestion vs baseline road"
+    },
+    {
+      "feature": "road_Marathahalli Bridge",
+      "coef": -2.0736,
+      "odds_ratio": 0.1257,
+      "description": "Traveling on Marathahalli Bridge is associated with 87.4% lower odds of congestion vs baseline road"
+    }
+  ]
+}

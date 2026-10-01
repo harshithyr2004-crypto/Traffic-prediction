@@ -1,0 +1,131 @@
+/**
+ * Preset data, road network constants, and scenario definitions
+ * for Bengaluru Road Traffic Congestion Risk Prediction.
+ */
+
+export const DEFAULT_ROADS = [
+  { name: "Sony World Junction", area: "Koramangala", desc: "Koramangala 80ft Road Intersection" },
+  { name: "Sarjapur Road", area: "Koramangala", desc: "Sarjapur Outer Ring Road Inbound" },
+  { name: "100 Feet Road", area: "Indiranagar", desc: "Indiranagar Commercial Corridor" },
+  { name: "CMH Road", area: "Indiranagar", desc: "Chinmaya Mission Hospital Road Arterial" },
+  { name: "Trinity Circle", area: "M.G. Road", desc: "M.G. Road / Old Airport Road Junction" },
+  { name: "Anil Kumble Circle", area: "M.G. Road", desc: "Central Business District / Cubbon Park" },
+  { name: "Hebbal Flyover", area: "Hebbal", desc: "Ballari Road / Airport Corridor" },
+  { name: "Ballari Road", area: "Hebbal", desc: "Sadashivanagar to Hebbal Arterial" },
+  { name: "Marathahalli Bridge", area: "Whitefield", desc: "Whitefield IT Corridor / HAL Airport Rd" },
+  { name: "ITPL Main Road", area: "Whitefield", desc: "International Tech Park Bangalore Main Road" },
+  { name: "South End Circle", area: "Jayanagar", desc: "Jayanagar Metro Corridor Junction" },
+  { name: "Jayanagar 4th Block", area: "Jayanagar", desc: "Jayanagar Shopping Complex Arterial" },
+  { name: "Silk Board Junction", area: "Electronic City", desc: "Silk Board / Hosur Road Merge" },
+  { name: "Hosur Road", area: "Electronic City", desc: "Electronic City Surface Arterial" },
+  { name: "Tumkur Road", area: "Yeshwanthpur", desc: "NH-4 Freight & Intercity Arterial" },
+  { name: "Yeshwanthpur Circle", area: "Yeshwanthpur", desc: "Railway Terminal & APMC Market Junction" },
+];
+
+export const WEATHER_OPTIONS = [
+  { value: "Clear", label: "Clear Sky", emoji: "☀️", desc: "Dry road surface, normal visibility" },
+  { value: "Overcast", label: "Overcast", emoji: "☁️", desc: "Cloud cover, dry road surface" },
+  { value: "Fog", label: "Fog / Mist", emoji: "🌫️", desc: "Reduced visibility, headway deceleration" },
+  { value: "Rain", label: "Monsoon Rain", emoji: "🌧️", desc: "Waterlogging, reduced braking & speed" },
+  { value: "Windy", label: "Windy", emoji: "💨", desc: "High winds, cautious driving" },
+];
+
+export const DAYS_OF_WEEK = [
+  { id: 0, short: "Mon", full: "Monday", isWeekend: false },
+  { id: 1, short: "Tue", full: "Tuesday", isWeekend: false },
+  { id: 2, short: "Wed", full: "Wednesday", isWeekend: false },
+  { id: 3, short: "Thu", full: "Thursday", isWeekend: false },
+  { id: 4, short: "Fri", full: "Friday", isWeekend: false },
+  { id: 5, short: "Sat", full: "Saturday", isWeekend: true },
+  { id: 6, short: "Sun", full: "Sunday", isWeekend: true },
+];
+
+export const MONTHS = [
+  { id: 1, name: "January" },
+  { id: 2, name: "February" },
+  { id: 3, name: "March" },
+  { id: 4, name: "April" },
+  { id: 5, name: "May" },
+  { id: 6, name: "June" },
+  { id: 7, name: "July" },
+  { id: 8, name: "August" },
+  { id: 9, name: "September" },
+  { id: 10, name: "October" },
+  { id: 11, name: "November" },
+  { id: 12, name: "December" },
+];
+
+export const PRESET_SCENARIOS = [
+  {
+    id: "sony-world-rush",
+    name: "Sony World Peak",
+    icon: "🚦",
+    tag: "Commercial Surge",
+    road_name: "Sony World Junction",
+    area_name: "Koramangala",
+    day_of_week: 0,
+    month: 10,
+    weather_condition: "Clear",
+    roadwork: false,
+  },
+  {
+    id: "sarjapur-roadwork",
+    name: "Sarjapur Roadwork",
+    icon: "🚧",
+    tag: "Lane Constriction",
+    road_name: "Sarjapur Road",
+    area_name: "Koramangala",
+    day_of_week: 1,
+    month: 11,
+    weather_condition: "Overcast",
+    roadwork: true,
+  },
+  {
+    id: "indiranagar-weekend",
+    name: "Indiranagar Saturday",
+    icon: "🛍️",
+    tag: "Weekend Leisure",
+    road_name: "100 Feet Road",
+    area_name: "Indiranagar",
+    day_of_week: 5,
+    month: 12,
+    weather_condition: "Clear",
+    roadwork: false,
+  },
+  {
+    id: "marathahalli-rain",
+    name: "Marathahalli Rain",
+    icon: "🌧️",
+    tag: "Monsoon Crawl",
+    road_name: "Marathahalli Bridge",
+    area_name: "Whitefield",
+    day_of_week: 2,
+    month: 7,
+    weather_condition: "Rain",
+    roadwork: false,
+  },
+  {
+    id: "hebbal-fog",
+    name: "Hebbal Morning Fog",
+    icon: "🌫️",
+    tag: "Airport Route",
+    road_name: "Hebbal Flyover",
+    area_name: "Hebbal",
+    day_of_week: 0,
+    month: 10,
+    weather_condition: "Fog",
+    roadwork: false,
+  },
+  {
+    id: "tumkur-sunday",
+    name: "Tumkur Rd Cruise",
+    icon: "🚗",
+    tag: "Low Risk",
+    road_name: "Tumkur Road",
+    area_name: "Yeshwanthpur",
+    day_of_week: 6,
+    month: 1,
+    weather_condition: "Clear",
+    roadwork: false,
+  },
+];
